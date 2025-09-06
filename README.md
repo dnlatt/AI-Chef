@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/Next.js-15-black?logo=nextdotjs" alt="Next.js" />
   <img src="https://img.shields.io/badge/MongoDB-Atlas-green?logo=mongodb" alt="MongoDB" />
   <img src="https://img.shields.io/badge/Google-Generative%20AI-orange?logo=google" alt="Google AI" />
-  <img src="https://img.shields.io/badge/TailwindCSS-3.x-38B2AC?logo=tailwindcss" alt="TailwindCSS" />
+  <img src="https://img.shields.io/badge/TailwindCSS-4.x-38B2AC?logo=tailwindcss" alt="TailwindCSS" />
   <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" />
 </p>
 
@@ -16,6 +16,8 @@ Just enter what you have in your fridge, click **Generate**, and let AI create:
 - A personalized recipe
 - Step-by-step cooking instructions
 - Auto-generated recipe images
+
+> 🌐 **Live Demo:** https://ai-chef-woad.vercel.app/
 
 ## ✨ Features
 
@@ -32,9 +34,10 @@ Just enter what you have in your fridge, click **Generate**, and let AI create:
 - **AI**: Google Generative AI (text + image)
 - **Deployment**: Vercel
 
-## 📸 Demo
+## 📸 Screenshots
 
-👉 Coming soon with live demo link!
+<img width="3440" height="6236" alt="image" src="https://github.com/user-attachments/assets/997f6a71-949e-47ba-a3f9-9d742a858345" />
+
 
 ## 📦 Installation
 
@@ -48,8 +51,8 @@ cd AI-Chef
 npm install
 
 # Add environment variables in .env.local
-NEXT_PUBLIC_GOOGLE_API_KEY=your_key_here
-MONGODB_URI=your_mongodb_connection_string
+GOOGLE_GEMINI_API_KEY=your_key_here
+DATABASE_URL=your_mongodb_connection_string
 
 # Run dev server
 npm run dev
