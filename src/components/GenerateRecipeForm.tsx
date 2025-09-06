@@ -37,6 +37,13 @@ export function GenerateRecipeForm({ onRecipeGenerated }: GenerateRecipeFormProp
     setSuggestions([]);
   };
 
+  const resetForm = () => {
+    setInputIngredients('');
+    setDietaryPref('none');
+    setSuggestions([]);
+    setError('');
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
@@ -68,6 +75,9 @@ export function GenerateRecipeForm({ onRecipeGenerated }: GenerateRecipeFormProp
 
       const data = await res.json();
       onRecipeGenerated(data);
+      
+      // ✅ Reset form after successful generation
+      resetForm();
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
     } finally {
@@ -104,8 +114,12 @@ export function GenerateRecipeForm({ onRecipeGenerated }: GenerateRecipeFormProp
 
       {/* Select dropdown */}
       <div>
-        <Select onValueChange={setDietaryPref} defaultValue="none">
-          <SelectTrigger className="w-full p-7 rounded-xl border-gray-300">
+        <Select 
+          onValueChange={setDietaryPref} 
+          value={dietaryPref}
+          disabled={loading}
+        >
+          <SelectTrigger className="w-full p-7 rounded-xl border-gray-300 disabled:opacity-50 disabled:cursor-not-allowed">
             <SelectValue placeholder="Select dietary preference" />
           </SelectTrigger>
           <SelectContent className="rounded-xl shadow-lg border-gray-200 text-xl font-sans">
