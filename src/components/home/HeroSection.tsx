@@ -7,7 +7,7 @@ export function HeroSection({ onRecipeGenerated }: HeroSectionProps) {
   return (
     <section 
       id="home" 
-      className="relative bg-white min-h-screen flex items-center justify-center py-16 md:py-24 overflow-hidden"
+      className="relative bg-white min-h-screen flex items-center justify-center p-5 md:py-24 overflow-hidden"
     >
       <div className="container max-w-6xl mx-auto py-10 flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
